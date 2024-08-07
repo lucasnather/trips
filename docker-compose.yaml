@@ -2,19 +2,14 @@ services:
   postgresql:
     image: 'bitnami/postgresql:latest'
     ports:
-      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
-    volumes:
-      - ./db:/var/lib/postgresql
+      - "5432:5432"
     environment:
-      - POSTGRESQL_DATABASE="${POSTGRES_DATABASE}"
-      - POSTGRESQL_PASSWORD="${POSTGRES_PASSWORD}"
-      - POSTGRESQL_USERNAME="${POSTGRES_USERNAME}"
+      - POSTGRESQL_DATABASE=trips
+      - POSTGRESQL_PASSWORD=agorasimessasenhavaisersecreta
+      - POSTGRESQL_USERNAME=lucasbittencourt
     networks:
       - trips
 
 networks:
   trips:
     driver: bridge
-
-volumes:
-  db:
