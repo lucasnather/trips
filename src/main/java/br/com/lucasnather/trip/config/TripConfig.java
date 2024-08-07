@@ -2,6 +2,7 @@ package br.com.lucasnather.trip.config;
 
 import br.com.lucasnather.trip.application.gateways.BriefsRepository;
 import br.com.lucasnather.trip.application.services.CreateBriefService;
+import br.com.lucasnather.trip.application.services.DeleteBriefByIdService;
 import br.com.lucasnather.trip.application.services.FindManyBriefService;
 import br.com.lucasnather.trip.infra.gateways.BriefJpaRepository;
 import br.com.lucasnather.trip.infra.gateways.BriefMapper;
@@ -21,6 +22,12 @@ public class TripConfig {
     FindManyBriefService findManyBriefService(BriefsRepository briefsRepository) {
         return new FindManyBriefService(briefsRepository);
     }
+
+    @Bean
+    DeleteBriefByIdService deleteBriefByIdService(BriefsRepository briefsRepository) {
+        return new DeleteBriefByIdService(briefsRepository);
+    }
+
 
     @Bean
     BriefJpaRepository briefJpaRepository(BriefRepositoryJpa briefRepositoryJpa, BriefMapper briefMapper) {

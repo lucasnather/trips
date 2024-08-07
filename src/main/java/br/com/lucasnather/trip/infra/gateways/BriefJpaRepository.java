@@ -6,6 +6,8 @@ import br.com.lucasnather.trip.infra.persistence.BriefRepositoryJpa;
 import br.com.lucasnather.trip.infra.persistence.BriefsEntity;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class BriefJpaRepository implements BriefsRepository {
@@ -33,5 +35,17 @@ public class BriefJpaRepository implements BriefsRepository {
                .stream()
                .map(this.briefMapper::toDomain)
                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteById(UUID id) {
+        this.briefRepositoryJpa.deleteById(id);
+    }
+
+    @Override
+    public Optional<Briefs> findById(UUID id) {
+        BriefsEntity briefsEntity = this.briefRepositoryJpa.findById(id).get();
+
+       return Optional.ofNullable(this.briefMapper.toDomain(briefsEntity));
     }
 }
