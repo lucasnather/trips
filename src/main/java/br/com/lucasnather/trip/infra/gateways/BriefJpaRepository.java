@@ -5,6 +5,9 @@ import br.com.lucasnather.trip.domain.Briefs;
 import br.com.lucasnather.trip.infra.persistence.BriefRepositoryJpa;
 import br.com.lucasnather.trip.infra.persistence.BriefsEntity;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class BriefJpaRepository implements BriefsRepository {
 
     private final BriefMapper briefMapper;
@@ -22,5 +25,13 @@ public class BriefJpaRepository implements BriefsRepository {
         this.briefRepositoryJpa.save(briefsEntity);
 
         return this.briefMapper.toDomain(briefsEntity);
+    }
+
+    @Override
+    public List<Briefs> findMany() {
+       return  this.briefRepositoryJpa.findAll()
+               .stream()
+               .map(this.briefMapper::toDomain)
+               .collect(Collectors.toList());
     }
 }
