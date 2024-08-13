@@ -13,4 +13,5 @@ public interface BriefsRepository {
     void deleteById(UUID id);
     Optional<Briefs> findById(UUID id);
     Briefs updateById(UUID id, Briefs briefs);
+    List<Briefs> findThree();
 }

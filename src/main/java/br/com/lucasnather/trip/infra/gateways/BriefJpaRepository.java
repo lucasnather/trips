@@ -61,4 +61,12 @@ public class BriefJpaRepository implements BriefsRepository {
 
         return  this.briefMapper.toDomain(updateBrief);
     }
+
+    @Override
+    public List<Briefs> findThree() {
+        return  this.briefRepositoryJpa.findAll()
+                .stream()
+                .map(this.briefMapper::toDomain)
+                .collect(Collectors.toList());
+    }
 }
