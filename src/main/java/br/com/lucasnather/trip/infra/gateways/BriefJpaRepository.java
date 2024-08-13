@@ -48,4 +48,17 @@ public class BriefJpaRepository implements BriefsRepository {
 
        return Optional.ofNullable(this.briefMapper.toDomain(briefsEntity));
     }
+
+    @Override
+    public Briefs updateById(UUID id, Briefs briefs) {
+        Optional<BriefsEntity> findBriefById = this.briefRepositoryJpa.findById(id);
+
+        if(findBriefById.isEmpty()) throw new RuntimeException("Brief not exist");
+
+        BriefsEntity briefsEntity = this.briefMapper.toEntity(briefs);
+
+        BriefsEntity updateBrief = this.briefRepositoryJpa.save(briefsEntity);
+
+        return  this.briefMapper.toDomain(updateBrief);
+    }
 }

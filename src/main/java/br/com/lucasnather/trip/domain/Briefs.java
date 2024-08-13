@@ -24,6 +24,13 @@ public class Briefs {
         this.createdAt = createdAt;
     }
 
+    public  Briefs(UUID id, String photo, String brief, String name) {
+        this.id = id;
+        this.photo = photo;
+        this.brief = brief;
+        this.name =  name;
+    }
+
     public UUID getId() {
         return id;
     }

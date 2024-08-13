@@ -12,4 +12,5 @@ public interface BriefsRepository {
     List<Briefs> findMany();
     void deleteById(UUID id);
     Optional<Briefs> findById(UUID id);
+    Briefs updateById(UUID id, Briefs briefs);
 }
