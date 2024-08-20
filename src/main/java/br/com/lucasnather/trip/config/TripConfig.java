@@ -6,6 +6,7 @@ import br.com.lucasnather.trip.application.services.brief.*;
 import br.com.lucasnather.trip.application.services.destination.CreateDestinationService;
 import br.com.lucasnather.trip.application.services.destination.DeleteDestinationByIdService;
 import br.com.lucasnather.trip.application.services.destination.FindManyDestinationsService;
+import br.com.lucasnather.trip.application.services.destination.UpdateDestinationByIdService;
 import br.com.lucasnather.trip.infra.gateways.brief.BriefJpaRepository;
 import br.com.lucasnather.trip.infra.gateways.brief.BriefMapper;
 import br.com.lucasnather.trip.infra.gateways.destination.DestinationJpaRepository;
@@ -52,6 +53,11 @@ public class TripConfig {
     @Bean
     UpdateBriefByIdService updateBriefByIdService(BriefsRepository briefsRepository) {
         return  new UpdateBriefByIdService(briefsRepository);
+    }
+
+    @Bean
+    UpdateDestinationByIdService updateDestinationByIdService(DestinyRepository destinyRepository) {
+        return  new UpdateDestinationByIdService(destinyRepository);
     }
 
     @Bean

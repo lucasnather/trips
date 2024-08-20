@@ -2,6 +2,7 @@ package br.com.lucasnather.trip.infra.gateways.destination;
 
 import br.com.lucasnather.trip.application.gateways.DestinyRepository;
 import br.com.lucasnather.trip.domain.Destinations;
+import br.com.lucasnather.trip.infra.persistence.brief.BriefsEntity;
 import br.com.lucasnather.trip.infra.persistence.destination.DestinationsEntity;
 import br.com.lucasnather.trip.infra.persistence.destination.DestinationRepositoryJpa;
 
@@ -48,7 +49,15 @@ public class DestinationJpaRepository implements DestinyRepository {
     }
 
     @Override
-    public Destinations updateById(UUID id, Destinations destiny) {
-        return null;
+    public Destinations updateById(UUID id, Destinations destinations) {
+        Optional<DestinationsEntity> findBriefById = this.destinyRepositoryJpa.findById(id);
+
+        if(findBriefById.isEmpty()) throw new RuntimeException("Brief not exist");
+
+        DestinationsEntity destinationsEntity = this.destinyMapper.toEntity(destinations);
+
+        DestinationsEntity updateDestination = this.destinyRepositoryJpa.save(destinationsEntity);
+
+        return  this.destinyMapper.toDomain(updateDestination);
     }
 }

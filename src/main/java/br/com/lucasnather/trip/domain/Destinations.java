@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Destinations {
 
-    private final UUID id;
+    private UUID id;
 
     private String photo;
 
@@ -23,8 +23,8 @@ public class Destinations {
         this.createdAt = createdAt;
     }
 
-    public Destinations(String photo, String name, Double price) {
-        this.id = UUID.randomUUID();
+    public Destinations(UUID id,String photo, String name, Double price) {
+        this.id = id;
         this.photo = photo;
         this.name = name;
         this.price = price;
