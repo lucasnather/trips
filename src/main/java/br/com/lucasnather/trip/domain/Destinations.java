@@ -3,7 +3,7 @@ package br.com.lucasnather.trip.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class Destiny {
+public class Destinations {
 
     private final UUID id;
 
@@ -15,7 +15,7 @@ public class Destiny {
 
     private LocalDateTime createdAt;
 
-    public  Destiny(UUID id, String photo, String name, Double price, LocalDateTime createdAt) {
+    public Destinations(UUID id, String photo, String name, Double price, LocalDateTime createdAt) {
         this.id = id;
         this.photo = photo;
         this.name =  name;
@@ -23,7 +23,7 @@ public class Destiny {
         this.createdAt = createdAt;
     }
 
-    public Destiny(String photo, String name, Double price) {
+    public Destinations(String photo, String name, Double price) {
         this.id = UUID.randomUUID();
         this.photo = photo;
         this.name = name;

@@ -1,4 +1,4 @@
-package br.com.lucasnather.trip.application.services.briefs;
+package br.com.lucasnather.trip.application.services.brief;
 
 import br.com.lucasnather.trip.application.gateways.BriefsRepository;
 import br.com.lucasnather.trip.domain.Briefs;

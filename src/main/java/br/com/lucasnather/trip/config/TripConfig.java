@@ -2,16 +2,16 @@ package br.com.lucasnather.trip.config;
 
 import br.com.lucasnather.trip.application.gateways.BriefsRepository;
 import br.com.lucasnather.trip.application.gateways.DestinyRepository;
-import br.com.lucasnather.trip.application.services.briefs.*;
-import br.com.lucasnather.trip.application.services.destiny.CreateDestinyService;
-import br.com.lucasnather.trip.application.services.destiny.DeleteDestinyByIdService;
-import br.com.lucasnather.trip.application.services.destiny.FindManyDestinyService;
+import br.com.lucasnather.trip.application.services.brief.*;
+import br.com.lucasnather.trip.application.services.destination.CreateDestinationService;
+import br.com.lucasnather.trip.application.services.destination.DeleteDestinationByIdService;
+import br.com.lucasnather.trip.application.services.destination.FindManyDestinationsService;
 import br.com.lucasnather.trip.infra.gateways.brief.BriefJpaRepository;
 import br.com.lucasnather.trip.infra.gateways.brief.BriefMapper;
-import br.com.lucasnather.trip.infra.gateways.destiny.DestinyJpaRepository;
-import br.com.lucasnather.trip.infra.gateways.destiny.DestinyMapper;
+import br.com.lucasnather.trip.infra.gateways.destination.DestinationJpaRepository;
+import br.com.lucasnather.trip.infra.gateways.destination.DestinationMapper;
 import br.com.lucasnather.trip.infra.persistence.brief.BriefRepositoryJpa;
-import br.com.lucasnather.trip.infra.persistence.destiny.DestinyRepositoryJpa;
+import br.com.lucasnather.trip.infra.persistence.destination.DestinationRepositoryJpa;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,8 +24,8 @@ public class TripConfig {
     }
 
     @Bean
-    CreateDestinyService createDestinyService(DestinyRepository destinyRepository) {
-        return new CreateDestinyService(destinyRepository);
+    CreateDestinationService createDestinyService(DestinyRepository destinyRepository) {
+        return new CreateDestinationService(destinyRepository);
     }
 
 
@@ -35,8 +35,8 @@ public class TripConfig {
     }
 
     @Bean
-    FindManyDestinyService findManyDestinyService(DestinyRepository destinyRepository) {
-        return new FindManyDestinyService(destinyRepository);
+    FindManyDestinationsService findManyDestinyService(DestinyRepository destinyRepository) {
+        return new FindManyDestinationsService(destinyRepository);
     }
 
     @Bean
@@ -45,8 +45,8 @@ public class TripConfig {
     }
 
     @Bean
-    DeleteDestinyByIdService deleteDestinyByIdService(DestinyRepository destinyRepository) {
-        return new DeleteDestinyByIdService(destinyRepository);
+    DeleteDestinationByIdService deleteDestinyByIdService(DestinyRepository destinyRepository) {
+        return new DeleteDestinationByIdService(destinyRepository);
     }
 
     @Bean
@@ -66,8 +66,8 @@ public class TripConfig {
     }
 
     @Bean
-    DestinyJpaRepository destinyJpaRepository(DestinyRepositoryJpa destinyRepositoryJpa, DestinyMapper destinyMapper) {
-        return new DestinyJpaRepository(destinyRepositoryJpa, destinyMapper);
+    DestinationJpaRepository destinyJpaRepository(DestinationRepositoryJpa destinyRepositoryJpa, DestinationMapper destinyMapper) {
+        return new DestinationJpaRepository(destinyRepositoryJpa, destinyMapper);
     }
 
     @Bean
@@ -76,7 +76,7 @@ public class TripConfig {
     }
 
     @Bean
-    DestinyMapper destinyMapper() {
-        return  new DestinyMapper();
+    DestinationMapper destinyMapper() {
+        return  new DestinationMapper();
     }
 }

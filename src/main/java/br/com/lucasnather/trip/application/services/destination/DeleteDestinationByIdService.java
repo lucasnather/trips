@@ -1,21 +1,21 @@
-package br.com.lucasnather.trip.application.services.destiny;
+package br.com.lucasnather.trip.application.services.destination;
 
 import br.com.lucasnather.trip.application.gateways.DestinyRepository;
-import br.com.lucasnather.trip.domain.Destiny;
+import br.com.lucasnather.trip.domain.Destinations;
 
 import java.util.Optional;
 import java.util.UUID;
 
-public class DeleteDestinyByIdService {
+public class DeleteDestinationByIdService {
 
     private final DestinyRepository destinyRepository;
 
-    public  DeleteDestinyByIdService(DestinyRepository destinyRepository) {
+    public DeleteDestinationByIdService(DestinyRepository destinyRepository) {
         this.destinyRepository = destinyRepository;
     }
 
     public  void deleteById(UUID id) {
-        Optional<Destiny> destiny = this.destinyRepository.findById(id);
+        Optional<Destinations> destiny = this.destinyRepository.findById(id);
 
         if(destiny.isEmpty()) throw  new RuntimeException("Destiny Not Foundd");
 

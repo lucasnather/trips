@@ -1,6 +1,6 @@
 package br.com.lucasnather.trip.infra.controller.brief;
 
-import br.com.lucasnather.trip.application.services.briefs.UpdateBriefByIdService;
+import br.com.lucasnather.trip.application.services.brief.UpdateBriefByIdService;
 import br.com.lucasnather.trip.domain.Briefs;
 import br.com.lucasnather.trip.infra.controller.brief.dto.CreateBriefDto;
 import jakarta.validation.Valid;

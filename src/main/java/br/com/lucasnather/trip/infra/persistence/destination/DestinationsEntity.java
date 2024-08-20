@@ -1,4 +1,4 @@
-package br.com.lucasnather.trip.infra.persistence.destiny;
+package br.com.lucasnather.trip.infra.persistence.destination;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DestinyEntity {
+public class DestinationsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

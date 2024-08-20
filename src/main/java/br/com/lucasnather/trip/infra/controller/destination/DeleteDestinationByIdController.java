@@ -1,6 +1,6 @@
-package br.com.lucasnather.trip.infra.controller.destiny;
+package br.com.lucasnather.trip.infra.controller.destination;
 
-import br.com.lucasnather.trip.application.services.destiny.DeleteDestinyByIdService;
+import br.com.lucasnather.trip.application.services.destination.DeleteDestinationByIdService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +12,9 @@ import java.util.UUID;
 @RequestMapping("/api/destinos")
 public class DeleteDestinationByIdController {
 
-    private  final DeleteDestinyByIdService deleteDestinyByIdService;
+    private  final DeleteDestinationByIdService deleteDestinyByIdService;
 
-    public DeleteDestinationByIdController(DeleteDestinyByIdService deleteDestinyByIdService) {
+    public DeleteDestinationByIdController(DeleteDestinationByIdService deleteDestinyByIdService) {
         this.deleteDestinyByIdService = deleteDestinyByIdService;
     }
 
