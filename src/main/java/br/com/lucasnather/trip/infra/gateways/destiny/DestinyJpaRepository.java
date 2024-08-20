@@ -2,6 +2,7 @@ package br.com.lucasnather.trip.infra.gateways.destiny;
 
 import br.com.lucasnather.trip.application.gateways.DestinyRepository;
 import br.com.lucasnather.trip.domain.Destiny;
+import br.com.lucasnather.trip.infra.persistence.brief.BriefsEntity;
 import br.com.lucasnather.trip.infra.persistence.destiny.DestinyEntity;
 import br.com.lucasnather.trip.infra.persistence.destiny.DestinyRepositoryJpa;
 
@@ -37,12 +38,14 @@ public class DestinyJpaRepository implements DestinyRepository {
 
     @Override
     public void deleteById(UUID id) {
-
+        this.destinyRepositoryJpa.deleteById(id);
     }
 
     @Override
     public Optional<Destiny> findById(UUID id) {
-        return Optional.empty();
+        DestinyEntity destinyEntity = this.destinyRepositoryJpa.findById(id).get();
+
+        return Optional.ofNullable(this.destinyMapper.toDomain(destinyEntity));
     }
 
     @Override
