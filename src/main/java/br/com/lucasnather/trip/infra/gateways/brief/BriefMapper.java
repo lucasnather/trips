@@ -1,7 +1,7 @@
-package br.com.lucasnather.trip.infra.gateways;
+package br.com.lucasnather.trip.infra.gateways.brief;
 
 import br.com.lucasnather.trip.domain.Briefs;
-import br.com.lucasnather.trip.infra.persistence.BriefsEntity;
+import br.com.lucasnather.trip.infra.persistence.brief.BriefsEntity;
 
 public class BriefMapper {
 

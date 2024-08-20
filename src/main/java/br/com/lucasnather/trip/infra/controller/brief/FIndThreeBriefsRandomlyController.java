@@ -1,6 +1,6 @@
-package br.com.lucasnather.trip.infra.controller;
+package br.com.lucasnather.trip.infra.controller.brief;
 
-import br.com.lucasnather.trip.application.services.FindThreeBriefsRandomlyService;
+import br.com.lucasnather.trip.application.services.briefs.FindThreeBriefsRandomlyService;
 import br.com.lucasnather.trip.domain.Briefs;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,21 +1,20 @@
-package br.com.lucasnather.trip.infra.persistence;
+package br.com.lucasnather.trip.infra.persistence.destiny;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Entity(name = "briefs")
+@Entity(name = "destiny")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BriefsEntity {
+public class DestinyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -26,13 +25,11 @@ public class BriefsEntity {
     private String photo;
 
     @Column
-    @Length(min = 10, max = 100)
-    private String brief;
-
-    @Column
     private String name;
 
     @Column
+    private Double price;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 }

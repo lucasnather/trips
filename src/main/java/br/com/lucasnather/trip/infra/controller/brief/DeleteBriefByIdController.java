@@ -1,6 +1,6 @@
-package br.com.lucasnather.trip.infra.controller;
+package br.com.lucasnather.trip.infra.controller.brief;
 
-import br.com.lucasnather.trip.application.services.DeleteBriefByIdService;
+import br.com.lucasnather.trip.application.services.briefs.DeleteBriefByIdService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;

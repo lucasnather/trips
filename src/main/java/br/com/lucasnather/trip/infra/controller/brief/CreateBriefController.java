@@ -1,8 +1,8 @@
-package br.com.lucasnather.trip.infra.controller;
+package br.com.lucasnather.trip.infra.controller.brief;
 
-import br.com.lucasnather.trip.application.services.CreateBriefService;
+import br.com.lucasnather.trip.application.services.briefs.CreateBriefService;
 import br.com.lucasnather.trip.domain.Briefs;
-import br.com.lucasnather.trip.infra.controller.dto.CreateBriefDto;
+import br.com.lucasnather.trip.infra.controller.brief.dto.CreateBriefDto;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +23,7 @@ public class CreateBriefController {
     }
 
     @PostMapping
-    Briefs post(@RequestBody @Valid CreateBriefDto createBriefDto) {
+    Briefs post(@RequestBody CreateBriefDto createBriefDto) {
         UUID id = UUID.randomUUID();
         LocalDateTime createdAt = LocalDateTime.now();
         Briefs briefs = new Briefs(id, createBriefDto.photo(), createBriefDto.brief(), createBriefDto.name(), createdAt);

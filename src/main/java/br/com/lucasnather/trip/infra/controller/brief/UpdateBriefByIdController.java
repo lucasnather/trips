@@ -1,12 +1,11 @@
-package br.com.lucasnather.trip.infra.controller;
+package br.com.lucasnather.trip.infra.controller.brief;
 
-import br.com.lucasnather.trip.application.services.UpdateBriefByIdService;
+import br.com.lucasnather.trip.application.services.briefs.UpdateBriefByIdService;
 import br.com.lucasnather.trip.domain.Briefs;
-import br.com.lucasnather.trip.infra.controller.dto.CreateBriefDto;
+import br.com.lucasnather.trip.infra.controller.brief.dto.CreateBriefDto;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.UUID;
 

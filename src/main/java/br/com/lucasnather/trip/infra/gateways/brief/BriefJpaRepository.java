@@ -1,9 +1,9 @@
-package br.com.lucasnather.trip.infra.gateways;
+package br.com.lucasnather.trip.infra.gateways.brief;
 
 import br.com.lucasnather.trip.application.gateways.BriefsRepository;
 import br.com.lucasnather.trip.domain.Briefs;
-import br.com.lucasnather.trip.infra.persistence.BriefRepositoryJpa;
-import br.com.lucasnather.trip.infra.persistence.BriefsEntity;
+import br.com.lucasnather.trip.infra.persistence.brief.BriefRepositoryJpa;
+import br.com.lucasnather.trip.infra.persistence.brief.BriefsEntity;
 
 import java.util.List;
 import java.util.Optional;
