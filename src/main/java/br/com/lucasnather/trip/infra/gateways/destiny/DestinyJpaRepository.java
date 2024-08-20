@@ -8,6 +8,7 @@ import br.com.lucasnather.trip.infra.persistence.destiny.DestinyRepositoryJpa;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class DestinyJpaRepository implements DestinyRepository {
 
@@ -28,7 +29,10 @@ public class DestinyJpaRepository implements DestinyRepository {
 
     @Override
     public List<Destiny> findMany() {
-        return List.of();
+        return  this.destinyRepositoryJpa.findAll()
+                .stream()
+                .map(this.destinyMapper::toDomain)
+                .collect(Collectors.toList());
     }
 
     @Override

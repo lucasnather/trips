@@ -4,6 +4,7 @@ import br.com.lucasnather.trip.application.gateways.BriefsRepository;
 import br.com.lucasnather.trip.application.gateways.DestinyRepository;
 import br.com.lucasnather.trip.application.services.briefs.*;
 import br.com.lucasnather.trip.application.services.destiny.CreateDestinyService;
+import br.com.lucasnather.trip.application.services.destiny.FindManyDestinyService;
 import br.com.lucasnather.trip.infra.gateways.brief.BriefJpaRepository;
 import br.com.lucasnather.trip.infra.gateways.brief.BriefMapper;
 import br.com.lucasnather.trip.infra.gateways.destiny.DestinyJpaRepository;
@@ -30,6 +31,11 @@ public class TripConfig {
     @Bean
     FindManyBriefService findManyBriefService(BriefsRepository briefsRepository) {
         return new FindManyBriefService(briefsRepository);
+    }
+
+    @Bean
+    FindManyDestinyService findManyDestinyService(DestinyRepository destinyRepository) {
+        return new FindManyDestinyService(destinyRepository);
     }
 
     @Bean
